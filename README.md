@@ -24,6 +24,14 @@ The responsive layouts are implemented in the Astro source against the supplied 
 header, two-column Marks grid, and tablet table geometry. The desktop ZIP remains the source of the
 content, routes, tokens, and components.
 
+## Browse the Marks
+
+| Mark | Open |
+| --- | --- |
+| M.A.R.K. I | [Pages route](https://brightwav3.github.io/M.A.R.K./marks/i/) · [source repository](./marks/mark-i/) |
+| M.A.R.K. II | [Pages route](https://brightwav3.github.io/M.A.R.K./marks/ii/) · [source repository](./marks/mark-ii/) |
+| All Marks | [Pages index](https://brightwav3.github.io/M.A.R.K./marks/) |
+
 ## Pinned Marks
 
 The lineage is represented in the repository as pinned Git submodules:
