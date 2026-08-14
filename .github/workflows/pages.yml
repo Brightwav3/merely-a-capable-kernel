@@ -26,6 +26,7 @@ jobs:
         with:
           path: ./site
           node-version: 24
+          package-manager: npm
 
   deploy:
     needs: build
