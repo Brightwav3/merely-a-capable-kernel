@@ -1,5 +1,5 @@
 {
-  "name": "mark-meta-site",
+  "name": "mark-ii-site",
   "type": "module",
   "version": "0.2.0",
   "private": true,
@@ -11,9 +11,5 @@
   },
   "dependencies": {
     "astro": "^5.0.0"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "typescript": "^5.9.3"
   }
 }

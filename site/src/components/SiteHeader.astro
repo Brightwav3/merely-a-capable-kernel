@@ -1,6 +1,13 @@
 ---
 import { site } from "../data/site";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const path = Astro.url.pathname;
+const nav = [
+  { href: base + "/", label: "Log", match: (p: string) => p.replace(/\/$/, "") === base },
+  { href: base + "/entries", label: "Entries", match: (p: string) => p.includes("/entries") || p.includes("/log/") },
+  { href: base + "/marks", label: "Marks", match: (p: string) => p.includes("/marks") },
+  { href: base + "/system", label: "System", match: (p: string) => p.includes("/system") },
+];
 ---
 
 <header class="bar">
@@ -8,10 +15,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <a class="mark" href={base + "/"}>
       <img class="tile" src={base + "/brand-mark.svg"} alt="" width="20" height="20" />
       <span class="name">{site.title}</span>
-      <span class="sub">The kernel lineage</span>
+      <span class="sub">Devblog</span>
     </a>
     <nav aria-label="Primary">
-      <a href={base + "/#marks"} class="nav on">The Marks</a>
+      {nav.map((n) => (
+        <a href={n.href} class:list={["nav", n.match(path) && "on"]}>{n.label}</a>
+      ))}
       <a class="nav" href={site.repo}>GitHub</a>
       <button class="theme" id="theme-toggle" type="button" aria-label="Switch theme"></button>
     </nav>

@@ -1,83 +1,28 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { marks } from "../data/site";
+import Intro from "../components/Intro.astro";
+import LogList from "../components/LogList.astro";
+import SignalPath from "../components/SignalPath.astro";
 
+const entries = (await getCollection("log")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-const statusLabel = { complete: "Complete", active: "Active line", future: "Future boundary" };
 ---
 
 <BaseLayout>
-  <section class="hero shell">
-    <p class="eyebrow">Merely A Responsive Kernel</p>
-    <h1>One lineage.<br /><em>Three Marks.</em></h1>
-    <p class="lede muted">
-      M.A.R.K. is the evolution of a personal assistant kernel — from architectural proof, through
-      an intelligent half-duplex assistant, toward a future conversational system.
-    </p>
-    <a class="cta" href={base + "/#marks"}>Explore the lineage <span aria-hidden="true">↓</span></a>
-  </section>
-
-  <section class="shell marks" id="marks" aria-labelledby="marks-title">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">The Marks</p>
-        <h2 id="marks-title">Technological evolution, not repository versions.</h2>
-      </div>
-      <p class="tiny muted">Each Mark asks a different question.</p>
+  <Intro total={entries.length} />
+  <section class="shell">
+    <div class="head">
+      <p class="eyebrow">Latest entries</p>
+      <a class="tiny" href={base + "/entries"}>All {entries.length} →</a>
     </div>
-
-    <div class="mark-grid">
-      {marks.map((mark) => (
-        <article class:list={["mark-card", mark.status]}>
-          <div class="mark-top">
-            <span class="mark-number">{mark.number}</span>
-            <span class="status">{statusLabel[mark.status]}</span>
-          </div>
-          <p class="eyebrow">{mark.name}</p>
-          <h3>{mark.title}</h3>
-          <p class="question">{mark.question}</p>
-          <p class="description muted">{mark.description}</p>
-          {mark.repo ? (
-            <a class="repo-link" href={mark.repo}>Open {mark.name} <span aria-hidden="true">↗</span></a>
-          ) : (
-            <span class="repo-link pending">Not published yet</span>
-          )}
-        </article>
-      ))}
-    </div>
+    <LogList entries={entries.slice(0, 3)} />
   </section>
-
-  <section class="shell progression" aria-label="M.A.R.K. progression">
-    <div class="line" aria-hidden="true"></div>
-    {marks.map((mark) => <span class:list={["step", mark.status]}>{mark.number}</span>)}
-  </section>
+  <SignalPath />
 </BaseLayout>
 
 <style>
-  .hero{padding:92px 0 84px;max-width:1080px}
-  h1{margin-top:12px;font-size:clamp(48px,8vw,96px);font-weight:500;letter-spacing:-.065em;line-height:1.02}
-  h1 em{color:var(--accent);font-style:normal}
-  .lede{max-width:54ch;margin-top:24px;font-size:18px;line-height:1.55}
-  .cta{display:inline-flex;align-items:center;gap:10px;height:38px;margin-top:28px;padding:0 18px;border-radius:999px;background:var(--surface-inverse);color:var(--text-inverse);font-size:13px;font-weight:500;text-decoration:none;transition:transform 150ms,background 150ms}
-  .cta:hover{background:var(--gray-600);text-decoration:none;transform:translateY(-1px)}
-  .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:16px}
-  h2{max-width:24ch;margin-top:8px}
-  .marks{padding-bottom:20px}
-  .mark-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-subtle);border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden}
-  .mark-card{display:flex;flex-direction:column;min-height:360px;padding:22px;background:var(--surface-card);transition:background 150ms}
-  .mark-card:hover{background:var(--surface-hover)}
-  .mark-card.active{background:var(--accent-soft)}
-  .mark-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:54px}
-  .mark-number{font:500 32px/1 ui-monospace,"SF Mono",Menlo,monospace;color:var(--text-primary)}
-  .status{font-size:12px;color:var(--text-tertiary)}
-  .mark-card h3{margin-top:8px;font-size:24px}
-  .question{margin-top:18px;color:var(--text-primary);font-size:14px;line-height:1.5}
-  .description{margin-top:12px;font-size:13px}
-  .repo-link{display:inline-flex;gap:8px;margin-top:auto;padding-top:24px;color:var(--text-accent);font-size:13px;text-decoration:none}
-  .repo-link:hover{text-decoration:underline}.repo-link.pending{color:var(--text-tertiary)}
-  .progression{display:flex;align-items:center;justify-content:space-between;position:relative;padding:42px 18px 50px}
-  .line{position:absolute;left:32px;right:32px;top:50%;height:1px;background:var(--border-default)}
-  .step{display:grid;place-items:center;position:relative;width:32px;height:32px;border:1px solid var(--border-default);border-radius:50%;background:var(--surface-sunken);font:12px ui-monospace,"SF Mono",Menlo,monospace;color:var(--text-tertiary)}
-  .step.complete{border-color:var(--success);color:var(--success)}.step.active{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}.step.future{border-style:dashed}
-  @media (max-width:760px){.hero{padding:56px 0}.section-head{display:block}.section-head>.tiny{display:block;margin-top:12px}.mark-grid{grid-template-columns:1fr}.mark-card{min-height:300px}.progression{padding-bottom:34px}}
+  .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
 </style>
