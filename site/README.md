@@ -1,14 +1,14 @@
-# M.A.R.K. II — build log site
+# Merely a capable kernel — build log site
 
 Astro static site for GitHub Pages, built on the Fidelio design system (light, Inter, one accent,
-four type sizes). Deployed at `https://brightwav3.github.io/Assistant-mark-II/`.
+four type sizes). Deployed at `https://brightwav3.github.io/merely-a-capable-kernel/`.
 
 ## Run
 
 ```bash
 cd site
 npm install
-npm run dev      # http://localhost:4321/Assistant-mark-II
+npm run dev      # http://localhost:4321/merely-a-capable-kernel
 npm run build    # -> site/dist
 ```
 

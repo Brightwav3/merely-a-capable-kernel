@@ -1,22 +1,22 @@
-# M.A.R.K.
+# Merely a capable kernel
 
-The meta-repository for the M.A.R.K. lineage.
+The meta-repository for the Merely a capable kernel lineage.
 
-M.A.R.K. is not one application or one provider. It is the evolution of an assistant kernel across
+Merely a capable kernel is not one application or one provider. It is the evolution of an assistant kernel across
 three technological boundaries:
 
 ```text
-M.A.R.K. I    Proof of Concept
+Mark I        Proof of Concept
       ↓
-M.A.R.K. II   Advanced Half-Duplex Assistant
+Mark II       Advanced Half-Duplex Assistant
       ↓
-M.A.R.K. III  Future Conversational Assistant
+Mark III      Future Conversational Assistant
 ```
 
-The public Astro site is the M.A.R.K. II devblog: the original ZIP source with its log, entries,
+The public Astro site is the Mark II devblog: the original ZIP source with its log, entries,
 Marks, system view, and full design system preserved.
 
-The site source lives in [`site/`](./site) and deploys to [GitHub Pages](https://brightwav3.github.io/M.A.R.K./)
+The site source lives in [`site/`](./site) and deploys to [GitHub Pages](https://brightwav3.github.io/merely-a-capable-kernel/)
 through [`.github/workflows/pages.yml`](./.github/workflows/pages.yml).
 
 The responsive layouts are implemented in the Astro source against the supplied design references:
@@ -28,9 +28,9 @@ content, routes, tokens, and components.
 
 | Mark | Open |
 | --- | --- |
-| M.A.R.K. I | [Pages route](https://brightwav3.github.io/M.A.R.K./marks/i/) · [source repository](./marks/mark-i/) |
-| M.A.R.K. II | [Pages route](https://brightwav3.github.io/M.A.R.K./marks/ii/) · [source repository](./marks/mark-ii/) |
-| All Marks | [Pages index](https://brightwav3.github.io/M.A.R.K./marks/) |
+| Mark I | [Pages route](https://brightwav3.github.io/merely-a-capable-kernel/marks/i/) · [root submodule](./mark-i/) |
+| Mark II | [Pages route](https://brightwav3.github.io/merely-a-capable-kernel/marks/ii/) · [root submodule](./mark-ii/) |
+| All Marks | [Pages index](https://brightwav3.github.io/merely-a-capable-kernel/marks/) |
 
 ## Pinned Marks
 
@@ -38,8 +38,8 @@ The lineage is represented in the repository as pinned Git submodules:
 
 | Mark | Path | Repository |
 | --- | --- | --- |
-| M.A.R.K. I | [`marks/mark-i/`](./marks/mark-i) | [Assistant-mark-I](https://github.com/Brightwav3/Assistant-mark-I) |
-| M.A.R.K. II | [`marks/mark-ii/`](./marks/mark-ii) | [Assistant-mark-II](https://github.com/Brightwav3/Assistant-mark-II) |
-| M.A.R.K. III | — | Future; no repository published yet |
+| Mark I | [`mark-i/`](./mark-i) | [Assistant-mark-I](https://github.com/Brightwav3/Assistant-mark-I) |
+| Mark II | [`mark-ii/`](./mark-ii) | [Assistant-mark-II](https://github.com/Brightwav3/Assistant-mark-II) |
+| Mark III | — | Future; no repository published yet |
 
 Clone with `git clone --recurse-submodules` to materialize both pinned Mark repositories.
