@@ -19,6 +19,11 @@ Marks, system view, and full design system preserved.
 The site source lives in [`site/`](./site) and deploys to [GitHub Pages](https://brightwav3.github.io/M.A.R.K./)
 through [`.github/workflows/pages.yml`](./.github/workflows/pages.yml).
 
+The responsive layouts are implemented in the Astro source against the supplied design references:
+390px mobile uses the two-row header and one-column content, while 834px tablet uses the single-row
+header, two-column Marks grid, and tablet table geometry. The desktop ZIP remains the source of the
+content, routes, tokens, and components.
+
 ## Pinned Marks
 
 The lineage is represented in the repository as pinned Git submodules:
