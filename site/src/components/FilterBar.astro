@@ -33,50 +33,57 @@ const { groups } = Astro.props;
 
 <script is:inline>
   (() => {
-    const bar = document.getElementById("filter-bar");
-    const list = document.getElementById("log-list");
-    if (!bar || !list) return;
-    const rows = [...list.querySelectorAll(".row")];
-    const empty = list.querySelector(".empty");
-    const count = document.getElementById("filter-count");
-    const reset = document.getElementById("filter-reset");
-    const q = document.getElementById("filter-q");
-    const state = { mark: "All", area: "All", status: "All", q: "" };
+    const init = () => {
+      const bar = document.getElementById("filter-bar");
+      const list = document.getElementById("log-list");
+      if (!bar || !list) return;
+      const rows = [...list.querySelectorAll(".row")];
+      const empty = list.querySelector(".empty");
+      const count = document.getElementById("filter-count");
+      const reset = document.getElementById("filter-reset");
+      const q = document.getElementById("filter-q");
+      const state = { mark: "All", area: "All", status: "All", q: "" };
 
-    function apply() {
-      let shown = 0;
-      for (const row of rows) {
-        const ok =
-          (state.mark === "All" || row.dataset.mark === state.mark) &&
-          (state.area === "All" || row.dataset.area === state.area) &&
-          (state.status === "All" || row.dataset.status === state.status) &&
-          (!state.q || row.dataset.text.includes(state.q));
-        row.hidden = !ok;
-        if (ok) shown++;
+      function apply() {
+        let shown = 0;
+        for (const row of rows) {
+          const ok =
+            (state.mark === "All" || row.dataset.mark === state.mark) &&
+            (state.area === "All" || row.dataset.area === state.area) &&
+            (state.status === "All" || row.dataset.status === state.status) &&
+            (!state.q || row.dataset.text.includes(state.q));
+          row.hidden = !ok;
+          if (ok) shown++;
+        }
+        empty.hidden = shown > 0;
+        count.textContent = shown + " of " + rows.length + " shown";
+        reset.hidden = state.mark === "All" && state.area === "All" && state.status === "All" && !state.q;
       }
-      empty.hidden = shown > 0;
-      count.textContent = shown + " of " + rows.length + " shown";
-      reset.hidden = state.mark === "All" && state.area === "All" && state.status === "All" && !state.q;
-    }
 
-    bar.querySelectorAll(".chips").forEach((group) => {
-      group.addEventListener("click", (ev) => {
-        const btn = ev.target.closest(".chip");
-        if (!btn) return;
-        group.querySelectorAll(".chip").forEach((c) => c.classList.toggle("on", c === btn));
-        state[group.dataset.key] = btn.dataset.value;
+      bar.querySelectorAll(".chips").forEach((group) => {
+        group.addEventListener("click", (ev) => {
+          const btn = ev.target.closest(".chip");
+          if (!btn) return;
+          group.querySelectorAll(".chip").forEach((c) => c.classList.toggle("on", c === btn));
+          state[group.dataset.key] = btn.dataset.value;
+          apply();
+        });
+      });
+      q.addEventListener("input", () => { state.q = q.value.trim().toLowerCase(); apply(); });
+      reset.addEventListener("click", () => {
+        state.mark = state.area = state.status = "All";
+        state.q = "";
+        q.value = "";
+        bar.querySelectorAll(".chips").forEach((g) => g.querySelectorAll(".chip").forEach((c, i) => c.classList.toggle("on", i === 0)));
         apply();
       });
-    });
-    q.addEventListener("input", () => { state.q = q.value.trim().toLowerCase(); apply(); });
-    reset.addEventListener("click", () => {
-      state.mark = state.area = state.status = "All";
-      state.q = "";
-      q.value = "";
-      bar.querySelectorAll(".chips").forEach((g) => g.querySelectorAll(".chip").forEach((c, i) => c.classList.toggle("on", i === 0)));
       apply();
-    });
-    apply();
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init, { once: true });
+    } else {
+      init();
+    }
   })();
 </script>
 
