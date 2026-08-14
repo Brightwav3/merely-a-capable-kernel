@@ -1,8 +1,8 @@
-# Merely a capable kernel
+# Merely a Responsive Kernel
 
-The meta-repository for the Merely a capable kernel lineage.
+The meta-repository for the Merely a Responsive Kernel lineage.
 
-Merely a capable kernel is not one application or one provider. It is the evolution of an assistant kernel across
+Merely a Responsive Kernel is not one application or one provider. It is the evolution of an assistant kernel across
 three technological boundaries:
 
 ```text
@@ -16,7 +16,7 @@ Mark III      Future Conversational Assistant
 The public Astro site is the Mark II devblog: the original ZIP source with its log, entries,
 Marks, system view, and full design system preserved.
 
-The site source lives in [`site/`](./site) and deploys to [GitHub Pages](https://brightwav3.github.io/merely-a-capable-kernel/)
+The site source lives in [`site/`](./site) and deploys to [GitHub Pages](https://brightwav3.github.io/merely-a-responsive-kernel/)
 through [`.github/workflows/pages.yml`](./.github/workflows/pages.yml).
 
 The responsive layouts are implemented in the Astro source against the supplied design references:
@@ -28,9 +28,9 @@ content, routes, tokens, and components.
 
 | Mark | Open |
 | --- | --- |
-| Mark I | [Pages route](https://brightwav3.github.io/merely-a-capable-kernel/marks/i/) · [root submodule](./mark-i/) |
-| Mark II | [Pages route](https://brightwav3.github.io/merely-a-capable-kernel/marks/ii/) · [root submodule](./mark-ii/) |
-| All Marks | [Pages index](https://brightwav3.github.io/merely-a-capable-kernel/marks/) |
+| Mark I | [Pages route](https://brightwav3.github.io/merely-a-responsive-kernel/marks/i/) · [root submodule](./mark-i/) |
+| Mark II | [Pages route](https://brightwav3.github.io/merely-a-responsive-kernel/marks/ii/) · [root submodule](./mark-ii/) |
+| All Marks | [Pages index](https://brightwav3.github.io/merely-a-responsive-kernel/marks/) |
 
 ## Pinned Marks
 

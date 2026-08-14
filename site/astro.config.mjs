@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
 
-// GitHub Pages: https://brightwav3.github.io/merely-a-capable-kernel/
+// GitHub Pages: https://brightwav3.github.io/merely-a-responsive-kernel/
 export default defineConfig({
   site: "https://brightwav3.github.io",
-  base: "/merely-a-capable-kernel",
+  base: "/merely-a-responsive-kernel",
   trailingSlash: "ignore",
   build: { format: "directory" },
 });

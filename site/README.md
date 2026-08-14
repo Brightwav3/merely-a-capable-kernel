@@ -1,14 +1,14 @@
-# Merely a capable kernel — build log site
+# Merely a Responsive Kernel — build log site
 
 Astro static site for GitHub Pages, built on the Fidelio design system (light, Inter, one accent,
-four type sizes). Deployed at `https://brightwav3.github.io/merely-a-capable-kernel/`.
+four type sizes). Deployed at `https://brightwav3.github.io/merely-a-responsive-kernel/`.
 
 ## Run
 
 ```bash
 cd site
 npm install
-npm run dev      # http://localhost:4321/merely-a-capable-kernel
+npm run dev      # http://localhost:4321/merely-a-responsive-kernel
 npm run build    # -> site/dist
 ```
 
