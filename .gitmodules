@@ -1,0 +1,6 @@
+[submodule "marks/mark-i"]
+	path = marks/mark-i
+	url = https://github.com/Brightwav3/Assistant-mark-I.git
+[submodule "marks/mark-ii"]
+	path = marks/mark-ii
+	url = https://github.com/Brightwav3/Assistant-mark-II.git

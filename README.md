@@ -18,3 +18,15 @@ Marks, system view, and full design system preserved.
 
 The site source lives in [`site/`](./site) and deploys to [GitHub Pages](https://brightwav3.github.io/M.A.R.K./)
 through [`.github/workflows/pages.yml`](./.github/workflows/pages.yml).
+
+## Pinned Marks
+
+The lineage is represented in the repository as pinned Git submodules:
+
+| Mark | Path | Repository |
+| --- | --- | --- |
+| M.A.R.K. I | [`marks/mark-i/`](./marks/mark-i) | [Assistant-mark-I](https://github.com/Brightwav3/Assistant-mark-I) |
+| M.A.R.K. II | [`marks/mark-ii/`](./marks/mark-ii) | [Assistant-mark-II](https://github.com/Brightwav3/Assistant-mark-II) |
+| M.A.R.K. III | — | Future; no repository published yet |
+
+Clone with `git clone --recurse-submodules` to materialize both pinned Mark repositories.
