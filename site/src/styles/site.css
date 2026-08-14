@@ -27,6 +27,16 @@ a:focus-visible { outline: 2px solid var(--border-focus); outline-offset: 2px; b
 .muted { color: var(--text-secondary); }
 .tiny { font-size: 12px; color: var(--text-tertiary); }
 
+@media (min-width: 641px) and (max-width: 900px) {
+  :root { --shell: 834px; }
+  .shell { width: min(100% - 48px, var(--shell)); }
+}
+
+@media (max-width: 640px) {
+  :root { --shell: 390px; }
+  .shell { width: min(100% - 32px, var(--shell)); }
+}
+
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 /* ---- Dark theme ----

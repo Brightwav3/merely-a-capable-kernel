@@ -3,7 +3,7 @@ export const site = {
   tagline: "Merely A Responsive Kernel — devblog",
   description:
     "Devblog for M.A.R.K., an intelligent, model-independent personal assistant kernel.",
-  repo: "https://github.com/Brightwav3/Assistant-mark-II",
+  repo: "https://github.com/Brightwav3/M.A.R.K.",
   org: "https://github.com/Brightwav3",
 };
 

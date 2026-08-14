@@ -7,14 +7,16 @@ interface Props {
   /** Adds data-* attributes so the entries page can filter client-side. */
   filterable?: boolean;
   showMark?: boolean;
+  /** The mobile reference uses a horizontal date/area line on listing/detail pages. */
+  mobileMetaRow?: boolean;
 }
-const { entries, filterable = false, showMark = false } = Astro.props;
+const { entries, filterable = false, showMark = false, mobileMetaRow = false } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const fmt = (d: Date) =>
   d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 ---
 
-<div class="card list" id={filterable ? "log-list" : undefined}>
+<div class:list={['card', 'list', mobileMetaRow && 'mobile-meta-row']} id={filterable ? "log-list" : undefined}>
   {entries.map((e) => (
     <a
       class="row"
@@ -56,5 +58,6 @@ const fmt = (d: Date) =>
   .go{color:var(--text-tertiary);font-size:13px}
   .row:hover .go{color:var(--accent)}
   .empty{padding:48px 16px;text-align:center}
-  @media (max-width:760px){.row{grid-template-columns:1fr;gap:10px}.meta{flex-direction:row;gap:10px;align-items:baseline}.right{justify-content:flex-start}.go{display:none}}
+  @media (min-width:641px) and (max-width:900px){.row{grid-template-columns:104px 1fr auto;gap:16px}.right{gap:10px}}
+  @media (max-width:640px){.row{grid-template-columns:1fr;gap:10px}.meta{flex-direction:column;gap:6px}.right{justify-content:flex-start;gap:8px;flex-wrap:wrap}.go{display:inline}.mobile-meta-row .meta{flex-direction:row;gap:10px;align-items:baseline}}
 </style>

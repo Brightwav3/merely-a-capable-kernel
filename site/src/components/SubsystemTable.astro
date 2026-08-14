@@ -31,5 +31,7 @@ import { subsystems, site } from "../data/site";
   .owns{font-size:13px}
   .st{text-align:right}
   .note{margin-top:12px;max-width:var(--measure)}
-  @media (max-width:760px){.row{grid-template-columns:1fr auto;gap:6px}.owns{grid-column:1/-1}}
+  @media (max-width:900px){.head .tiny{display:none}}
+  @media (min-width:641px) and (max-width:900px){.row{grid-template-columns:190px 1fr auto;gap:16px}}
+  @media (max-width:640px){.row{grid-template-columns:1fr auto;gap:6px}.owns{grid-column:1/-1}}
 </style>

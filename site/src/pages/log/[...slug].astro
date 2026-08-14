@@ -78,5 +78,6 @@ const fmt = entry.data.date.toLocaleDateString("en-GB", { day: "numeric", month:
   .step:hover{background:var(--surface-hover);text-decoration:none}
   .step.right{text-align:right}
   .t{font-size:13px;font-weight:500}
-  @media (max-width:720px){.post{padding-top:28px}.prose{padding:20px}.pager{flex-direction:column}.step.right{text-align:left}}
+  @media (min-width:641px) and (max-width:900px){.post{max-width:700px}}
+  @media (max-width:640px){.post{padding-top:24px}.prose{padding:20px}.pager{flex-direction:column}.step.right{text-align:left}}
 </style>

@@ -44,5 +44,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:32px 0 0;padding:0;background:var(--border-subtle);border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden}
   .facts > div{background:var(--surface-card);padding:14px 16px}
   dd{margin:6px 0 0;font-size:14px;color:var(--text-primary)}
-  @media (max-width:720px){.intro{padding:36px 0 24px}.facts{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:900px){
+    .intro{padding:44px 0 28px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .actions .ghost:last-child{display:none}
+  }
+  @media (max-width:640px){.intro{padding:28px 0 24px}}
 </style>
