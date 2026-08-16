@@ -3,7 +3,8 @@ title: "The Mark I graph is frozen and taggable"
 date: 2026-06-30
 area: Platform
 mark: I
-status: Ready
+status: VERIFIED
+verification: N/A
 summary: "The stable tag mark-i-baseline points to the exact commits that formed the original eleven-repository graph, in the meta-repository and in every child."
 ---
 

@@ -3,7 +3,8 @@ title: "Windows is verified. macOS and Linux are not claimed."
 date: 2026-07-20
 area: Audio
 mark: II
-status: Needs work
+status: NEEDS WORK
+verification: NOT VERIFIED
 summary: "Microphone capture, playback, and activation input are platform leaves. Only the win32 leaf exists, and package metadata is not evidence."
 ---
 
@@ -14,9 +15,9 @@ a platform implementation directly.
 
 | Host | Status | Evidence |
 | --- | --- | --- |
-| Windows x64 | Ready | Source, deterministic tests, and the Windows CI job with real ffmpeg/ffplay |
-| macOS (darwin) | Needs work | No adapter. Microphone and playback report degraded with a reason |
-| Linux | Needs work | Same as macOS |
+| Windows x64 | VERIFIED | Source, deterministic tests, and the Windows CI job with real ffmpeg/ffplay |
+| macOS (darwin) | UNSUPPORTED | No adapter. Microphone and playback report degraded with a reason |
+| Linux | UNSUPPORTED | Same as macOS |
 
 Before either non-Windows host may be called supported:
 

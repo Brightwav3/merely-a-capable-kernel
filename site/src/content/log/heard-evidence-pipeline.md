@@ -3,7 +3,8 @@ title: "What the model heard is evidence, not truth"
 date: 2026-08-12
 area: Memory
 mark: II
-status: Ready
+status: VERIFIED
+verification: DETERMINISTIC TEST
 summary: "The Live API accepts no transcription language hint, so the diagnostic transcript can carry phonetically correct text in the wrong script. The evidence split keeps that out of memory."
 ---
 

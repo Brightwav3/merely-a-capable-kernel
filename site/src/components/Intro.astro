@@ -8,15 +8,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 <section class="intro">
   <div class="shell">
     <p class="eyebrow">Merely A Responsive Kernel</p>
-    <h1>A devblog for the kernel around the voice.</h1>
+    <h1>The platform around the assistant.</h1>
     <p class="lede muted">
-      M.A.R.K. II is the persistent platform around a realtime model — memory, state, tools,
-      delegation, and lifecycle, composed as a headless system. Each entry records what was built
-      and what evidence exists for it. Nothing here is claimed without a run behind it.
+      M.A.R.K. is model-independent infrastructure for a persistent personal assistant. It is not a
+      chatbot, a voice model, a desktop application, or one provider. It is the kernel around those
+      components: interaction, memory, state, tools, delegation, and lifecycle.
     </p>
+    <div class="generation"><span class="mono">M.A.R.K. II</span><span>Intelligent Half-Duplex Assistant</span></div>
     <div class="actions">
-      <a class="cta" href={base + "/entries"}>Browse all entries</a>
-      <a class="ghost" href={base + "/marks"}>The Marks</a>
+      <a class="cta" href={base + "/system"}>See the current system</a>
+      <a class="ghost" href={base + "/entries"}>Read the journal · {total}</a>
+      <a class="ghost" href={base + "/marks"}>M.A.R.K. I → II → III</a>
       <a class="ghost" href={site.repo}>Read the source</a>
     </div>
     <dl class="facts">
@@ -34,6 +36,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   .intro{padding:56px 0 32px}
   h1{margin-top:12px;max-width:22ch}
   .lede{margin-top:12px;max-width:var(--measure)}
+  .generation{display:flex;gap:10px;align-items:baseline;margin-top:18px;color:var(--text-secondary);font-size:13px}
+  .generation .mono{color:var(--text-primary);font-size:12px}
   .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
   .cta,.ghost{display:inline-flex;align-items:center;height:32px;padding:0 16px;border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;transition:background 150ms cubic-bezier(.22,1,.36,1),transform 150ms}
   .cta{background:var(--surface-inverse);color:var(--text-inverse)}

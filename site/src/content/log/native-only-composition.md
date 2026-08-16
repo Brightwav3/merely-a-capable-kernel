@@ -3,7 +3,8 @@ title: "One speech route, on purpose"
 date: 2026-08-05
 area: Voice
 mark: II
-status: Ready
+status: ACTIVE
+verification: HARDWARE
 summary: "The local Scribe → Intelligence → Voice composition is retired from assistant-runtime. It is not a fallback, not a second mode, and not part of the dependency graph."
 ---
 

@@ -3,8 +3,16 @@ title: "Delegated voice intelligence is verified on hardware"
 date: 2026-08-14
 area: Intelligence
 mark: II
-status: Ready
+status: VERIFIED
+verification: HARDWARE
 summary: "A voice session can hand deeper work to a separately configured reasoning model, keep talking to the user while it runs, and speak the result when it arrives."
+diagrams:
+  - src: "/images/delegation-architecture.png"
+    alt: "Detailed delegation architecture from Gemini Live through the delegation broker, intelligence core, tool system, memory core, and delivery scheduler."
+    caption: "Reference architecture for the hardware-verified delegated voice-intelligence slice."
+  - src: "/images/delegation-timeline.png"
+    alt: "Delegation timeline showing immediate acknowledgement, asynchronous work, and delivery back into the same realtime session."
+    caption: "The user remains in the live session while delegated work runs."
 ---
 
 A voice session can hand deeper work to a separately configured reasoning model, keep talking to

@@ -3,7 +3,8 @@ title: "The full-duplex ceiling is the model, not the timer"
 date: 2026-07-28
 area: Platform
 mark: II
-status: Needs work
+status: ACTIVE
+verification: EXPERIMENTAL
 summary: "Gemini Live waits for the user to stop before responding and cannot backchannel while they speak. That is a model limitation, not a missing state transition."
 ---
 

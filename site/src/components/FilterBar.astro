@@ -1,6 +1,6 @@
 ---
 interface Props {
-  groups: { key: "mark" | "area" | "status"; label: string; values: string[] }[];
+  groups: { key: "mark" | "area" | "status" | "date"; label: string; values: string[] }[];
 }
 const { groups } = Astro.props;
 ---
@@ -42,7 +42,7 @@ const { groups } = Astro.props;
       const count = document.getElementById("filter-count");
       const reset = document.getElementById("filter-reset");
       const q = document.getElementById("filter-q");
-      const state = { mark: "All", area: "All", status: "All", q: "" };
+      const state = { mark: "All", area: "All", status: "All", date: "All", q: "" };
 
       function apply() {
         let shown = 0;
@@ -51,13 +51,14 @@ const { groups } = Astro.props;
             (state.mark === "All" || row.dataset.mark === state.mark) &&
             (state.area === "All" || row.dataset.area === state.area) &&
             (state.status === "All" || row.dataset.status === state.status) &&
+            (state.date === "All" || row.dataset.date === state.date) &&
             (!state.q || row.dataset.text.includes(state.q));
           row.hidden = !ok;
           if (ok) shown++;
         }
         empty.hidden = shown > 0;
         count.textContent = shown + " of " + rows.length + " shown";
-        reset.hidden = state.mark === "All" && state.area === "All" && state.status === "All" && !state.q;
+        reset.hidden = state.mark === "All" && state.area === "All" && state.status === "All" && state.date === "All" && !state.q;
       }
 
       bar.querySelectorAll(".chips").forEach((group) => {
@@ -71,7 +72,7 @@ const { groups } = Astro.props;
       });
       q.addEventListener("input", () => { state.q = q.value.trim().toLowerCase(); apply(); });
       reset.addEventListener("click", () => {
-        state.mark = state.area = state.status = "All";
+        state.mark = state.area = state.status = state.date = "All";
         state.q = "";
         q.value = "";
         bar.querySelectorAll(".chips").forEach((g) => g.querySelectorAll(".chip").forEach((c, i) => c.classList.toggle("on", i === 0)));

@@ -1,7 +1,8 @@
-# Merely a Responsive Kernel — build log site
+# Merely a Responsive Kernel — project site
 
-Astro static site for GitHub Pages, built on the Fidelio design system (light, Inter, one accent,
-four type sizes). Deployed at `https://brightwav3.github.io/merely-a-responsive-kernel/`.
+Astro static project site for GitHub Pages, built on the Fidelio design system (light, Inter, one
+accent, four type sizes). The Journal is one section of the site, not the project's identity.
+Deployed at `https://brightwav3.github.io/merely-a-responsive-kernel/`.
 
 ## Run
 
@@ -22,8 +23,8 @@ enable Pages → Source: GitHub Actions. `astro.config.mjs` already sets
 
 ```
 src/
-  content/log/*.md          the build log — one markdown file per entry
-  content/config.ts         frontmatter schema (title, date, area, status, summary)
+  content/log/*.md          the engineering journal — one markdown file per entry
+  content/config.ts         frontmatter schema (title, date, area, status, verification, summary)
   data/site.ts              repositories, facts, host support
   styles/site.css           imports the Fidelio tokens, then page-level primitives
   styles/ds/                vendored design-system tokens + base (do not edit)
@@ -33,7 +34,7 @@ src/
     Intro.astro       LogList.astro     SignalPath.astro
     SubsystemTable.astro  HostTable.astro
   pages/
-    index.astro             landing: intro, latest 3 entries, signal path
+    index.astro             landing: M.A.R.K. identity, architecture, latest 3 entries
     entries.astro           all entries + client-side filters (mark / area / state / search)
     marks/index.astro       the three Marks as cards
     marks/[mark].astro      one mark: scope, facts, and its entries
@@ -41,8 +42,8 @@ src/
     log/[...slug].astro     one entry, with older/newer pager
 ```
 
-Entry frontmatter carries `mark: I | II | III`, which drives the Marks pages and the Entries
-filters. `src/data/marks.ts` holds each mark's question, facts, and prose.
+Entry frontmatter carries `mark: I | II | III`, a lifecycle `status`, and a separate `verification`
+state. Those fields drive the Marks pages, journal metadata, and client-side filters.
 
 ## Writing an entry
 
@@ -52,9 +53,11 @@ Add a markdown file to `src/content/log/`:
 ---
 title: "Delegation survives session closure"
 date: 2026-09-02
-area: Intelligence        # Voice | Intelligence | Audio | Memory | Platform
-status: Ready             # Ready | Needs work | Not built yet
+area: Intelligence        # Voice | Intelligence | Audio | Memory | Tools | Platform
+status: VERIFIED          # VERIFIED | ACTIVE | EXPERIMENTAL | NEEDS WORK | SUPERSEDED | RETIRED
+verification: HARDWARE   # DETERMINISTIC TEST | HARDWARE | EXPERIMENTAL | NOT VERIFIED | N/A
 summary: "One sentence stating what is now true."
+mark: II
 ---
 
 Body in markdown. Code fences, tables, and inline code are styled.

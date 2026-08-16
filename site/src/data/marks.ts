@@ -23,7 +23,7 @@ export const marks: Mark[] = [
       { label: "Answer", value: "Yes" },
       { label: "Repositories", value: "11" },
       { label: "Baseline tag", value: "mark-i-baseline" },
-      { label: "Status", value: "Frozen" },
+      { label: "Status", value: "Retired baseline" },
     ],
     blocks: [
       { kind: "p", text: "Mark I proved that independent cores can be composed into one usable system." },
@@ -40,8 +40,8 @@ export const marks: Mark[] = [
     question:
       "How capable can an assistant become with the current generation of half-duplex voice models?",
     facts: [
-      { label: "Cores delivered", value: "12 of 25" },
-      { label: "Imports between cores", value: "0" },
+      { label: "Mode", value: "Half-duplex" },
+      { label: "Cross-core imports", value: "0" },
       { label: "Delegation latency", value: "~2 s" },
       { label: "Verified host", value: "Windows x64" },
     ],

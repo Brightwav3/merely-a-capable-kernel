@@ -13,7 +13,7 @@ const { mark } = Astro.props;
 const all = await getCollection("log");
 const entries = all
   .filter((e: CollectionEntry<"log">) => e.data.mark === mark.id)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort((a: CollectionEntry<"log">, b: CollectionEntry<"log">) => b.data.date.valueOf() - a.data.date.valueOf());
 const [bg, fg] = phasePill[mark.phase];
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---

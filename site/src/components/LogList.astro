@@ -24,11 +24,13 @@ const fmt = (d: Date) =>
       data-mark={e.data.mark}
       data-area={e.data.area}
       data-status={e.data.status}
-      data-text={(e.data.title + " " + e.data.summary).toLowerCase()}
+      data-date={String(e.data.date.getFullYear())}
+      data-text={(e.data.title + " " + e.data.summary + " " + e.data.area).toLowerCase()}
     >
       <span class="meta">
-        <time class="tiny mono" datetime={e.data.date.toISOString()}>{fmt(e.data.date)}</time>
+        <span class="tiny mono">M.A.R.K. {e.data.mark}</span>
         <span class="tiny">{e.data.area}</span>
+        <time class="tiny mono" datetime={e.data.date.toISOString()}>{fmt(e.data.date)}</time>
       </span>
       <span>
         <span class="title">{e.data.title}</span>
@@ -50,7 +52,7 @@ const fmt = (d: Date) =>
   .row + .row{border-top:1px solid var(--border-subtle)}
   .row:hover{background:var(--surface-hover);text-decoration:none}
   .row[hidden]{display:none}
-  .meta{display:flex;flex-direction:column;gap:6px}
+  .meta{display:flex;flex-direction:column;gap:5px}
   .title{display:block;font-size:14px;font-weight:500;line-height:1.35}
   .summary{display:block;margin-top:6px;font-size:13px;max-width:64ch}
   .right{display:flex;align-items:center;justify-content:flex-end;gap:10px}

@@ -1,9 +1,16 @@
 ---
-interface Props { status: "Ready" | "Needs work" | "Not built yet"; }
+import type { Status } from "../data/site";
+
+interface Props { status: Status; }
 const { status } = Astro.props;
+const tone =
+  status === "VERIFIED" ? "ok" :
+  status === "ACTIVE" || status === "IMPLEMENTED" ? "active" :
+  status === "NEEDS WORK" || status === "EXPERIMENTAL" ? "warn" :
+  status === "UNSUPPORTED" || status === "PLANNED" ? "todo" : "muted";
 ---
 
-<span class:list={["pill", status === "Ready" ? "ok" : status === "Needs work" ? "warn" : "todo"]}>
+<span class:list={["pill", tone]}>
   <span class="dot" aria-hidden="true"></span>{status}
 </span>
 
@@ -11,6 +18,8 @@ const { status } = Astro.props;
   .pill{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:500;white-space:nowrap}
   .dot{width:6px;height:6px;border-radius:999px;background:currentColor}
   .ok{background:var(--success-soft);color:var(--green-600)}
+  .active{background:var(--accent-soft);color:var(--accent-hover)}
   .warn{background:var(--warning-soft);color:var(--amber-600)}
   .todo{background:var(--surface-sunken);color:var(--text-tertiary)}
+  .muted{background:var(--surface-sunken);color:var(--text-secondary)}
 </style>

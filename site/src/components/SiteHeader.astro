@@ -3,8 +3,8 @@ import { site } from "../data/site";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const path = Astro.url.pathname;
 const nav = [
-  { href: base + "/", label: "Log", match: (p: string) => p.replace(/\/$/, "") === base },
-  { href: base + "/entries", label: "Entries", match: (p: string) => p.includes("/entries") || p.includes("/log/") },
+  { href: base + "/", label: "M.A.R.K.", match: (p: string) => p.replace(/\/$/, "") === base },
+  { href: base + "/entries", label: "Journal", match: (p: string) => p.includes("/entries") || p.includes("/log/") },
   { href: base + "/marks", label: "Marks", match: (p: string) => p.includes("/marks") },
   { href: base + "/system", label: "System", match: (p: string) => p.includes("/system") },
 ];
@@ -15,7 +15,7 @@ const nav = [
     <a class="mark" href={base + "/"}>
       <img class="tile" src={base + "/brand-mark.svg"} alt="" width="20" height="20" />
       <span class="name">{site.title}</span>
-      <span class="sub">Devblog</span>
+      <span class="sub">Project</span>
     </a>
     <nav aria-label="Primary">
       {nav.map((n) => (

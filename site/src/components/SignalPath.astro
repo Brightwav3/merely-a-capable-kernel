@@ -9,7 +9,7 @@ const steps = [
 ---
 
 <section class="shell wrap">
-  <p class="eyebrow">Active signal path</p>
+  <p class="eyebrow">Reference signal path</p>
   <ol class="card path">
     {steps.map((s, i) => (
       <li>
@@ -19,7 +19,7 @@ const steps = [
       </li>
     ))}
   </ol>
-  <p class="tiny note">One speech route. The former local Scribe → Intelligence → Voice composition is retired from assistant-runtime — not a fallback, not a second mode.</p>
+  <p class="tiny note">The native realtime route is active. The AEC relationship is an explicit boundary under work; the former local Scribe → Intelligence → Voice composition is retired from assistant-runtime.</p>
 </section>
 
 <style>
