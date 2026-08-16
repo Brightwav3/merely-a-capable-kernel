@@ -6,6 +6,10 @@ mark: II
 status: ACTIVE
 verification: EXPERIMENTAL
 summary: "Gemini Live waits for the user to stop before responding and cannot backchannel while they speak. That is a model limitation, not a missing state transition."
+diagrams:
+  - src: "/images/handoff-compact-mono.png"
+    alt: "Monochrome conceptual diagram showing session A, transcript, summary, confirmation, and session B during a voice handoff."
+    caption: "Conceptual handoff sketch for preserving conversation identity across sessions; this is a design direction, not a verified full-duplex capability."
 ---
 
 The inherited composition runs a native bidirectional audio session through Gemini Live. That

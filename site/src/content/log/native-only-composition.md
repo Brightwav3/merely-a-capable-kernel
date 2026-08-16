@@ -6,6 +6,10 @@ mark: II
 status: ACTIVE
 verification: HARDWARE
 summary: "The local Scribe → Intelligence → Voice composition is retired from assistant-runtime. It is not a fallback, not a second mode, and not part of the dependency graph."
+diagrams:
+  - src: "/images/model-4.png"
+    alt: "Diagram showing microphone, assistant runtime, realtime core, Gemini Live, direct conversation, response audio, and bounded tool calls."
+    caption: "Reference view of the active native realtime route and its bounded tool path."
 ---
 
 The active Mark II runtime intentionally has one speech route:

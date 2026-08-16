@@ -6,6 +6,13 @@ mark: II
 status: ACTIVE
 verification: N/A
 summary: "Mark I remains the frozen proof of concept. Mark II is the active generation for making a half-duplex assistant genuinely capable."
+diagrams:
+  - src: "/images/model.png"
+    alt: "Conceptual diagram showing a voice model with conversation and delegation branches, then an intelligence core with tools, reasoner, and agents."
+    caption: "Conceptual map of the voice-facing boundary and delegation direction."
+  - src: "/images/model-2.png"
+    alt: "Conceptual diagram showing M.A.R.K. II as a composed runtime with intelligence, memory, speech, tool, device, activation, and external system branches."
+    caption: "Broader M.A.R.K. II composition sketch; planned systems are not presented as shipped capabilities."
 ---
 
 M.A.R.K. I answered whether a long-term personal assistant could exist as a modular system
